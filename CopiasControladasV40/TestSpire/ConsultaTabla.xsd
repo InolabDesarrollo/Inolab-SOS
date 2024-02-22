@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ConsultaTabla" targetNamespace="http://tempuri.org/ConsultaTabla.xsd" xmlns:mstns="http://tempuri.org/ConsultaTabla.xsd" xmlns="http://tempuri.org/ConsultaTabla.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_BROWSER" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_BROWSER (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TestSpire.Properties.Settings.GlobalReference.Default.DB_BROWSER" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_BROWSER (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT top 20 Folio,Documento,FechaDeEmision=FechaEmision,Hojas=NoHojas,
+Uso,TipoServicio=Tipo_Servicio.Descripcion,Cliente=Clientes.Empresa,FRS=IdFRS,
+case 
+	when Estatus=1 then 'Activo' 
+	when Estatus=0 then 'Cancelada' 
+end as Estatus 
+FROM CopiasControladas 
+left join Tipo_Servicio on Tipo_Servicio.ID=CopiasControladas.IdTipoServicio
+left join Clientes on Clientes.IdCliente=CopiasControladas.IdCliente
+
+order by Folio DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Folio" DataSetColumn="Folio" />
+              <Mapping SourceColumn="Documento" DataSetColumn="Documento" />
+              <Mapping SourceColumn="FechaDeEmision" DataSetColumn="FechaDeEmision" />
+              <Mapping SourceColumn="Hojas" DataSetColumn="Hojas" />
+              <Mapping SourceColumn="Uso" DataSetColumn="Uso" />
+              <Mapping SourceColumn="TipoServicio" DataSetColumn="TipoServicio" />
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="FRS" DataSetColumn="FRS" />
+              <Mapping SourceColumn="Estatus" DataSetColumn="Estatus" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_BROWSER (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  Folio,Documento,FechaDeEmision=FechaEmision,Hojas=NoHojas,
+Uso,TipoServicio=Tipo_Servicio.Descripcion,Cliente=Clientes.Empresa,FRS=IdFRS,
+case 
+	when Estatus=1 then 'Activo' 
+	when Estatus=0 then 'Cancelada' 
+end as Estatus 
+FROM CopiasControladas 
+left join Tipo_Servicio on Tipo_Servicio.ID=CopiasControladas.IdTipoServicio
+left join Clientes on Clientes.IdCliente=CopiasControladas.IdCliente
+
+order by FechaEmision DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Folio" DataSetColumn="Folio" />
+              <Mapping SourceColumn="Documento" DataSetColumn="Documento" />
+              <Mapping SourceColumn="FechaDeEmision" DataSetColumn="FechaDeEmision" />
+              <Mapping SourceColumn="Hojas" DataSetColumn="Hojas" />
+              <Mapping SourceColumn="Uso" DataSetColumn="Uso" />
+              <Mapping SourceColumn="TipoServicio" DataSetColumn="TipoServicio" />
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="FRS" DataSetColumn="FRS" />
+              <Mapping SourceColumn="Estatus" DataSetColumn="Estatus" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ConsultaTabla" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ConsultaTabla" msprop:Generator_UserDSName="ConsultaTabla">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Folio" msprop:Generator_ColumnVarNameInTable="columnFolio" msprop:Generator_ColumnPropNameInRow="Folio" msprop:Generator_ColumnPropNameInTable="FolioColumn" msprop:Generator_UserColumnName="Folio" type="xs:int" />
+              <xs:element name="Documento" msprop:Generator_ColumnVarNameInTable="columnDocumento" msprop:Generator_ColumnPropNameInRow="Documento" msprop:Generator_ColumnPropNameInTable="DocumentoColumn" msprop:Generator_UserColumnName="Documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaDeEmision" msprop:Generator_ColumnVarNameInTable="columnFechaDeEmision" msprop:Generator_ColumnPropNameInRow="FechaDeEmision" msprop:Generator_ColumnPropNameInTable="FechaDeEmisionColumn" msprop:Generator_UserColumnName="FechaDeEmision" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Hojas" msprop:Generator_ColumnVarNameInTable="columnHojas" msprop:Generator_ColumnPropNameInRow="Hojas" msprop:Generator_ColumnPropNameInTable="HojasColumn" msprop:Generator_UserColumnName="Hojas" type="xs:int" minOccurs="0" />
+              <xs:element name="Uso" msprop:Generator_ColumnVarNameInTable="columnUso" msprop:Generator_ColumnPropNameInRow="Uso" msprop:Generator_ColumnPropNameInTable="UsoColumn" msprop:Generator_UserColumnName="Uso" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoServicio" msprop:Generator_ColumnVarNameInTable="columnTipoServicio" msprop:Generator_ColumnPropNameInRow="TipoServicio" msprop:Generator_ColumnPropNameInTable="TipoServicioColumn" msprop:Generator_UserColumnName="TipoServicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FRS" msprop:Generator_ColumnVarNameInTable="columnFRS" msprop:Generator_ColumnPropNameInRow="FRS" msprop:Generator_ColumnPropNameInTable="FRSColumn" msprop:Generator_UserColumnName="FRS" type="xs:string" minOccurs="0" />
+              <xs:element name="Estatus" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEstatus" msprop:Generator_ColumnPropNameInRow="Estatus" msprop:Generator_ColumnPropNameInTable="EstatusColumn" msprop:Generator_UserColumnName="Estatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_RowClassName="DataTable2Row" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Folio" msprop:Generator_ColumnVarNameInTable="columnFolio" msprop:Generator_ColumnPropNameInRow="Folio" msprop:Generator_ColumnPropNameInTable="FolioColumn" msprop:Generator_UserColumnName="Folio" type="xs:int" />
+              <xs:element name="Documento" msprop:Generator_ColumnVarNameInTable="columnDocumento" msprop:Generator_ColumnPropNameInRow="Documento" msprop:Generator_ColumnPropNameInTable="DocumentoColumn" msprop:Generator_UserColumnName="Documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaDeEmision" msprop:Generator_ColumnVarNameInTable="columnFechaDeEmision" msprop:Generator_ColumnPropNameInRow="FechaDeEmision" msprop:Generator_ColumnPropNameInTable="FechaDeEmisionColumn" msprop:Generator_UserColumnName="FechaDeEmision" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Hojas" msprop:Generator_ColumnVarNameInTable="columnHojas" msprop:Generator_ColumnPropNameInRow="Hojas" msprop:Generator_ColumnPropNameInTable="HojasColumn" msprop:Generator_UserColumnName="Hojas" type="xs:int" minOccurs="0" />
+              <xs:element name="Uso" msprop:Generator_ColumnVarNameInTable="columnUso" msprop:Generator_ColumnPropNameInRow="Uso" msprop:Generator_ColumnPropNameInTable="UsoColumn" msprop:Generator_UserColumnName="Uso" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoServicio" msprop:Generator_ColumnVarNameInTable="columnTipoServicio" msprop:Generator_ColumnPropNameInRow="TipoServicio" msprop:Generator_ColumnPropNameInTable="TipoServicioColumn" msprop:Generator_UserColumnName="TipoServicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FRS" msprop:Generator_ColumnVarNameInTable="columnFRS" msprop:Generator_ColumnPropNameInRow="FRS" msprop:Generator_ColumnPropNameInTable="FRSColumn" msprop:Generator_UserColumnName="FRS" type="xs:string" minOccurs="0" />
+              <xs:element name="Estatus" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEstatus" msprop:Generator_ColumnPropNameInRow="Estatus" msprop:Generator_ColumnPropNameInTable="EstatusColumn" msprop:Generator_UserColumnName="Estatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:Folio" />
+    </xs:unique>
+    <xs:unique name="DataTable2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable2" />
+      <xs:field xpath="mstns:Folio" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1340
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSpire", "TestSpire\TestSpire.csproj", "{31D72C65-3617-45C5-8DD6-78BE5B533983}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CopiasControladas", "CopiasControladas\CopiasControladas.vdproj", "{7D591822-4C92-4503-AB31-6100413C899C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CopiasControladas2", "CopiasControladas2\CopiasControladas2.vdproj", "{FB4D0E7D-4619-419F-9127-6ED11650E2E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31D72C65-3617-45C5-8DD6-78BE5B533983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31D72C65-3617-45C5-8DD6-78BE5B533983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31D72C65-3617-45C5-8DD6-78BE5B533983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31D72C65-3617-45C5-8DD6-78BE5B533983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D591822-4C92-4503-AB31-6100413C899C}.Debug|Any CPU.ActiveCfg = Debug
+		{7D591822-4C92-4503-AB31-6100413C899C}.Debug|Any CPU.Build.0 = Debug
+		{7D591822-4C92-4503-AB31-6100413C899C}.Release|Any CPU.ActiveCfg = Release
+		{FB4D0E7D-4619-419F-9127-6ED11650E2E9}.Debug|Any CPU.ActiveCfg = Debug
+		{FB4D0E7D-4619-419F-9127-6ED11650E2E9}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E35F3FBF-77A6-404E-ABE4-F909D3F65044}
+	EndGlobalSection
+EndGlobal
